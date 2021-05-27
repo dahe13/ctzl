@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/example.css" />
+		<link rel="stylesheet" type="text/css" href="../css/weui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/vux.css" />
+		<script src="../js/back.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@media screen and (min-width:768px) {
+				html {
+					width: 500px;
+					height: 100%;
+					margin: 0 auto;
+					background: #dcdcdc;
+				}
+			
+				.title {
+					width: 500px;
+				}
+			
+				.weui-tabbar {
+					width: 500px;
+				}
+			}
+			
+			@media screen and (max-width:768px) {
+				.title {
+					width: 100%;
+				}
+			}
+			body {
+				background: white;
+			}
+			
+			.vux-header{
+				height: 44px;				
+				text-align: center;
+				font-size: 18px;
+				font-weight: 400;
+				color: #fff;
+			}
+			
+			.vux-header .vux-header-left .left-arrow:before {
+				content: "  ";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border: 2px solid white;
+				border-width: 2px 0 0 2px;
+				-webkit-transform: rotate(315deg);
+				transform: rotate(315deg);
+				top: 8px;
+				left: 7px;
+			}
+			
+			.vux-header .vux-header-left .vux-header-back {
+				color: white;
+				font-size: 18px;
+				top: 8px;
+				left: 7px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="vux-header title" style="background-color: rgb(216,75, 61);position: fixed;z-index: 500;">
+			<a href="../my_information.html">
+				<div class="vux-header-left">
+					<div class="left-arrow"></div>
+					<a href="../my_information.html" class="vux-header-back">返回</a>
+				</div>
+			</a>
+			<h1 class="vux-header-title" style="font-size: 20px;font-weight: bold;">关于我们</h1>
+			
+		</div>
+		
+		<div style="margin-top: 55px;line-height: 35px;color:#F43556;text-indent: 2em;">
+			<p style="margin: 0 10px 0 10px;">开发这款app的初衷是为了解决人们到达理发店理发需要等待以及不知道上哪里找优惠的理发店的问题，旨在服务大众，为人民服务，为人们的快生活提供便利的条件，在节省时间的同时又可以得到自己想要的理想发型。</p>
+			<p style="margin: 0 10px 0 10px;">希望我们的存在给你能给你的生活增添快乐，感谢您的使用！</p>
+		</div>
+		
+		<div class="weui-footer weui-footer_fixed-bottom" style="margin-bottom: 10px;">
+            <p class="weui-footer__links">
+                <a href="javascript:home();" class="weui-footer__link">从头再来</a>
+            </p>
+            <p class="weui-footer__text">制作于：20017-2018 &nbsp; Author：杨彭贺</p>
+        </div>
+
+	</body>
+
+</html>

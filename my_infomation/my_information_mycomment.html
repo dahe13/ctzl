@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/example.css" />
+		<link rel="stylesheet" type="text/css" href="../css/weui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<script src="../js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/vux.css" />
+		<script src="../js/back.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@media screen and (min-width:768px) {
+				html {
+					width: 500px;
+					height: 100%;
+					margin: 0 auto;
+					background: #dcdcdc;
+				}
+			
+				.title {
+					width: 500px;
+				}
+			
+				.weui-tabbar {
+					width: 500px;
+				}
+			}
+			
+			@media screen and (max-width:768px) {
+				.title {
+					width: 100%;
+				}
+			}
+			body {
+				background: white;
+			}
+			
+			.vux-header{
+				height: 44px;				
+				text-align: center;
+				font-size: 18px;
+				font-weight: 400;
+				color: #fff;
+			}
+			
+			.vux-header .vux-header-left .left-arrow:before {
+				content: "  ";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border: 2px solid white;
+				border-width: 2px 0 0 2px;
+				-webkit-transform: rotate(315deg);
+				transform: rotate(315deg);
+				top: 8px;
+				left: 7px;
+			}
+			
+			.vux-header .vux-header-left .vux-header-back {
+				color: white;
+				font-size: 18px;
+				top: 8px;
+				left: 7px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="vux-header title" style="background-color: rgb(216,75, 61);position: fixed;z-index: 500;">
+			<a href="../my_information.html">
+				<div class="vux-header-left">
+					<div class="left-arrow"></div>
+					<a href="../my_information.html" class="vux-header-back">返回</a>
+				</div>
+			</a>
+			<h1 class="vux-header-title" style="font-size: 20px;font-weight: bold;">我的点评</h1>
+			
+		</div>
+		
+		<div style="margin-top: 60px;margin-left: 4%;">
+			<div style="width:95%;height:55px;margin-left: 5%;">
+				<img src="../img/hair_appreciate/beitou2.jpg" style="width: 50px;height: 50px;border-radius: 50px;float: left;"/>
+				<p style="margin-left: 5%;float: left;">张老三</p><br />
+				<p style="margin-left: 5%;float: left;">2017.12.01</p>
+			</div>
+			
+			<div style="width: 100%;height: auto;text-indent: 2em;>
+				
+				<p style="line-height: 32px;"><span style="color: #F43530;font-size: 18px;">评价：</span>此理发师技术高超，理的发型很时髦，我很满意。手动笔芯！</p>
+			</div>
+		</div>
+		
+		<div style="margin-top: 20px;border-top: 3px solid #F8F8F8;margin-left: 4%;">
+			<div style="width:95%;height:55px;margin-left: 5%;margin-top: 15px;">
+				<img src="../img/hair_appreciate/beitou3.jpg" style="width: 50px;height: 50px;border-radius: 50px;float: left;"/>
+				<p style="margin-left: 5%;float: left;">王老四</p><br />
+				<p style="margin-left: 5%;float: left;">2017.12.01</p>
+			</div>
+			
+			<div style="width: 100%;height: auto;clear: left;text-indent: 2em;">
+				
+				<p><span style="color: #F43530;font-size: 18px;">评价：</span>这个理发师技术真的炒鸡棒，理的发型洋气的很，推荐大家来哦，米西米西。。。</p>
+			</div>
+		</div>
+
+	</body>
+
+</html>
