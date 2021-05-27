@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/example.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.css" />
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/quit.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<script type="text/javascript">
+			// H5 plus事件处理
+			function plusReady() {
+				// 设置系统状态栏背景为红色
+				plus.navigator.setStatusBarBackground('#F74C31');
+			}
+			if (window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener('plusready', plusReady, false);
+			}
+		</script>
+		<style type="text/css">
+			@media screen and (min-width:768px) {
+				html {
+					width: 500px;
+					height: 100%;
+					margin: 0 auto;
+					background: #dcdcdc;
+				}
+
+				.title {
+					width: 500px;
+					height: 44px;
+					line-height: 44px;
+					font-size: 20px;
+					text-align: center;
+					color: white;
+					background-color: #F43530;
+					position: fixed;
+					top: 0;
+					z-index: 55;
+					margin: 0 auto;
+				}
+
+				.weui-tabbar {
+					width: 500px;
+				}
+			}
+
+			@media screen and (max-width:768px) {
+				.title {
+					width: 100%;
+					height: 44px;
+					line-height: 44px;
+					font-size: 20px;
+					text-align: center;
+					color: white;
+					background-color: #F43530;
+					position: fixed;
+					top: 0;
+					z-index: 55;
+				}
+			}
+
+			body {
+				width: 100%;
+				margin: 0;
+				height: auto;
+				background-color: #f8f8f8;
+			}
+
+
+
+			#banner {
+				width: 100%;
+				height: 140px;
+				overflow: hidden;
+				margin-top: 46px;
+				position: relative;
+			}
+
+			#banner img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			.pagination {
+				position: absolute;
+				z-index: 20;
+				bottom: 0px;
+				width: 66px;
+				text-align: center;
+				left: 40%;
+			}
+
+			.swiper-pagination-bullet {
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				border-radius: 5px;
+				background: #fff;
+				margin: 0 2px;
+				opacity: 0.8;
+				cursor: pointer;
+			}
+
+			.swiper-pagination-bullet-active {
+				background: #FFBE00;
+			}
+
+			.content_title {
+				margin: 10px 0 0 0;
+				padding: 8px 8px;
+				color: wheat;
+				font-size: 16px;
+				background-color: #F43530;
+			}
+
+			.content_list {
+				background-color: #F8F8F8;
+				margin: 5px 15px;
+			}
+
+			.weui-media-box__thumb {
+				width: 50px;
+				height: 50px;
+			}
+
+			.weui-media-box__bd {
+				margin-left: 10px;
+			}
+
+			.weui-tab {
+				z-index: 50;
+			}
+
+			.weui-tabbar {
+				position: fixed;
+				bottom: 0px;
+				z-index: 50;
+				background-color: #F2F2F2;
+			}
+
+			.weui-tabbar__label {
+				font-size: 16px;
+				color: gray;
+			}
+
+			.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+				color: #E3170D;
+			}
+
+			.weui-grid {
+				height: 95px;
+				width: 25%;
+				background-color: white;
+				padding: 6px 0 0 0;
+			}
+
+			.weui-grid__label {
+				font-size: 15px;
+				color: #F43530;
+			}
+
+			.weui-grid__icon {
+				width: 60px;
+				height: 60px;
+				margin: 0 auto;
+			}
+
+			.weui-grid__icon img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: 8px;
+			}
+
+			.weui-media-box__desc .left {
+				width: 34%;
+				height: 40px;
+				margin-top: 8px;
+				float: left;
+				-webkit-line-clamp: 1;
+			}
+
+			.weui-media-box__desc .right {
+				width: 30%;
+				height: 40px;
+				line-height: 13px;
+				margin-top: 8px;
+				float: right;
+				text-align: center;
+			}
+
+			.hair_recommend_box {
+				margin: 10px 0;
+				height: 130px;
+				background-color: white;
+			}
+
+			.weui-media-box__desc {
+				color: #999999;
+				font-size: 15px;
+				line-height: 1.6;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+			}
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class="title"><strong>主页</strong></div>
+		<div id="banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/main_lunbo1.jpg" width="100%" height="140px" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/main_lunbo2.jpg" width="100%" height="140px" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/main_lunbo3.jpg" width="100%" height="140px" />
+				</div>
+			</div>
+			<div class="pagination"></div>
+		</div>
+		<!--轮播图片的js代码-->
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var mySwiper2 = new Swiper('#banner', {
+					autoplay: 1000,
+					visibilityFullFit: true,
+					loop: true,
+					pagination: '.pagination',
+				});
+
+				$(".tabs a").on('touchstart mousedown', function(e) {
+					e.preventDefault()
+					$(".tabs .active").removeClass('active')
+					$(this).addClass('active')
+					tabsSwiper.slideTo($(this).index())
+				})
+				$(".tabs a").click(function(e) {
+					e.preventDefault()
+				})
+			}
+		</script>
+
+		<!--<div class="content_title">发型欣赏
+			<a href="#"><span style="color: wheat;float: right;">更多 >></span></a>
+		</div>-->
+
+		<a class="weui-cell weui-cell_access" href="hair/appreciate/more.html" style="background: #F43530;color: white;margin-top: 5px;">
+			<div class="weui-cell__bd">
+				<p>发型欣赏</p>
+			</div>
+
+			<div class="weui-cell__ft">
+				<p style="color: white;">更多</p>
+			</div>
+
+		</a>
+
+		<div class="weui-grids" style="margin-top: 8px;">
+			<a href="hair/appreciate/hair_duanfa.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/duanfa.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">短发</p>
+			</a>
+			<a href="hair/appreciate/hair_tangfa.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/tangfa.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">烫发</p>
+			</a>
+			<a href="hair/appreciate/hair_hanshi.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/hanshi.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">韩式</p>
+			</a>
+			<a href="hair/appreciate/hair_fashion.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/shishang.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">时尚</p>
+			</a>
+			<a href="hair/appreciate/hair_beitou.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/beitou.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">背头</p>
+			</a>
+			<a href="hair/appreciate/hair_chanbian.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/chanbian.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">铲边</p>
+			</a>
+			<a href="hair/appreciate/hair_zhifa.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/zhifa.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">直发</p>
+			</a>
+			<a href="hair/appreciate/hair_juanfa.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/juanfa.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">卷发</p>
+			</a>
+			<a href="hair/appreciate/hair_liuhai.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/liuhai.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">刘海</p>
+			</a>
+			<a href="hair/appreciate/hair_zhichang.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/zhichang.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">职场</p>
+			</a>
+			<a href="hair/appreciate/hair_panfa.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<img src="img/hair_enjoy/panfa.jpg" alt="">
+				</div>
+				<p class="weui-grid__label">盘发</p>
+			</a>
+			<a href="hair/appreciate/more.html" class="weui-grid">
+				<div class="weui-grid__icon">
+					<p style="margin:0 0 0 15%;color: black;padding-top:50%;">。。。</p>
+				</div>
+
+				<p class="weui-grid__label">更多</p>
+			</a>
+		</div>
+
+		<!--<div class="content_title recommend">优质发型推荐</div>-->
+		<a class="weui-cell weui-cell_access" href="javascript:;" style="background: #F43530;color: white;margin-top: 5px;">
+			<div class="weui-cell__bd">
+				<p>优质发型推荐</p>
+			</div>
+			<div class="weui-cell__ft">
+				<p style="color: white;">更多</p>
+			</div>
+		</a>
+
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_beitou.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_man_beitou.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">男士背头</h4>
+					<p class="weui-media-box__desc left">欧美男士都在留什么发型？10款迥异风格的发型款式推荐。打造成熟魅力的酷炫型男.</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_liuhai.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_woman_liuhai.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">女士刘海发型</h4>
+					<p class="weui-media-box__desc left">女生发型选择哪一种好看？韩式清新，中式古典，还是喜欢日系的治愈系，慵懒睡不醒蓬松卷很简约。</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_duanfa.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_man_dunfa.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">男士短发</h4>
+					<p class="weui-media-box__desc left">欧美男士都在留什么发型？10款迥异风格的发型款式推荐。打造成熟魅力的酷炫型男.</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_zhifa.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_women_zhifa.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">女士直发</h4>
+					<p class="weui-media-box__desc left">女生发型选择哪一种好看？韩式清新，中式古典，还是喜欢日系的治愈系，慵懒睡不醒蓬松卷很简约。</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_hanshi.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_man_hanshi.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">男士韩式发型</h4>
+					<p class="weui-media-box__desc left">欧美男士都在留什么发型？10款迥异风格的发型款式推荐。打造成熟魅力的酷炫型男.</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_juanfa.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_women_juanfa.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">女士卷发</h4>
+					<p class="weui-media-box__desc left">女生发型选择哪一种好看？韩式清新，中式古典，还是喜欢日系的治愈系，慵懒睡不醒蓬松卷很简约。</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_chanbian.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_man_chanbian.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">男士铲边</h4>
+					<p class="weui-media-box__desc left">欧美男士都在留什么发型？10款迥异风格的发型款式推荐。打造成熟魅力的酷炫型男.</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+		<div class="hair_recommend_box">
+			<a href="hair/appreciate/hair_zhichang.html" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd" style="margin-right: 0;">
+					<img class="weui-media-box__thumb" src="img/hair_recommend/recommend_women_zhichang.png" alt="图片" style="width: 60px;height: 60px;border-radius: 5px;">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">女士职场</h4>
+					<p class="weui-media-box__desc left">女生发型选择哪一种好看？韩式清新，中式古典，还是喜欢日系的治愈系，慵懒睡不醒蓬松卷很简约。</p>
+					<span class="weui-media-box__desc right">详情 >></span>
+				</div>
+			</a>
+		</div>
+
+
+		<!--加载项部分代码-->
+		<div class="page__bd">
+			<!-- <div class="weui-loadmore">
+				<i class="weui-loading"></i>
+				<span class="weui-loadmore__tips">正在加载</span>
+			</div> -->
+			<div class="weui-loadmore weui-loadmore_line">
+				<span class="weui-loadmore__tips">暂无更多数据</span>
+			</div>
+		</div>
+
+		<div class="weui-tab">
+			<div class="weui-tab__panel">
+
+			</div>
+			<div class="weui-tabbar">
+				<a href="main.html" class="weui-tabbar__item weui-bar__item_on">
+					<span style="display: inline-block;position: relative;">
+						<img src="img/main_after.png" alt="" class="weui-tabbar__icon">
+					</span>
+					<p class="weui-tabbar__label">主页</p>
+				</a>
+				<a href="hair_style.html" class="weui-tabbar__item">
+					<img src="img/hairstyle_before.png" alt="" class="weui-tabbar__icon">
+					<p class="weui-tabbar__label">发型师</p>
+				</a>
+				<a href="coupon.html" class="weui-tabbar__item">
+					<span style="display: inline-block;position: relative;">
+						<img src="img/coupon_before.png" alt="" class="weui-tabbar__icon">
+					</span>
+					<p class="weui-tabbar__label">约惠</p>
+				</a>
+				<a href="my_information.html" class="weui-tabbar__item">
+					<img src="img/myinformation_before.png" alt="" class="weui-tabbar__icon">
+					<p class="weui-tabbar__label">我的</p>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript" class="tabbar js_show">
+			$(function() {
+				$('.weui-tabbar__item').on('click', function() {
+					$(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+				});
+			});
+		</script>
+	</body>
+
+</html>

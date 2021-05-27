@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/example.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.css" />
+		<!-- <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 769px)" href="css/pcStyle"/> -->
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/quit.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+
+			});
+		</script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<style type="text/css">
+			@media screen and (min-width:768px) {
+				html{
+					width: 500px;
+					margin: 0 auto;
+					background: #dcdcdc;
+				}
+				.pagination {
+					position: absolute;
+					z-index: 20;
+					bottom: 0px;
+					width: 66px;
+					text-align: center;
+					left: 48%;
+				}
+				
+			}
+			@media screen and (max-width:768px){
+				.pagination {
+					position: absolute;
+					z-index: 20;
+					bottom: 0px;
+					width: 66px;
+					text-align: center;
+					left: 40%;
+				}
+			}
+			
+			body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background-color: white;
+			}
+			
+			#banner {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				/*position: relative;*/
+			}
+			
+			#banner img {
+				width: 100%;
+				height: 100%;
+			}
+			
+		
+			.swiper-pagination-bullet {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background: #7b6c6c;
+				margin: 0 3px;
+				opacity: 0.8;
+				cursor: pointer;
+			}
+			
+			.swiper-pagination-bullet-active {
+				background: #F43530;
+			}
+			
+			button {
+				font-size: 20px;
+				color: wheat;
+				background-color: #F43530;
+				/*opacity: 0.9;*/
+				border-radius: 10PX;
+				padding: 8PX;
+				position: fixed;
+				top: 80%;
+				left: 30%;
+				z-index: 50;
+			}
+		</style>
+		</style>
+	</head>
+
+	<body>
+
+		<div id="banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/index_lunbo1.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/index_lunbo2.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/index_lunbo3.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<a href="login.html"><button>点击体验APP</button> </a>
+					<img src="img/index_lunbo4.jpg" />
+				</div>
+			</div>
+			<div class="pagination"></div>
+		</div>
+		<!--轮播图片的js代码-->
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var mySwiper2 = new Swiper('#banner', {
+					autoplay: 0,
+					visibilityFullFit: true,
+					loop: false,
+					pagination: '.pagination',
+				});
+
+				$(".tabs a").on('touchstart mousedown', function(e) {
+					e.preventDefault()
+					$(".tabs .active").removeClass('active')
+					$(this).addClass('active')
+					tabsSwiper.slideTo($(this).index())
+				})
+				$(".tabs a").click(function(e) {
+					e.preventDefault()
+				})
+			}
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/example.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.css" />
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/quit.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			@media screen and (min-width:768px) {
+				html {
+					width: 500px;
+					height: 100%;
+					margin: 0 auto;
+					background: #dcdcdc;
+				}
+
+				.title {
+					width: 500px;
+					height: 44px;
+					line-height: 44px;
+					font-size: 20px;
+					text-align: center;
+					color: white;
+					background-color: #F43530;
+					position: fixed;
+					top: 0;
+					z-index: 5;
+					margin: 0 auto;
+				}
+
+				.weui-tabbar {
+					width: 500px;
+				}
+			}
+
+			@media screen and (max-width:768px) {
+				.title {
+					width: 100%;
+					height: 44px;
+					line-height: 44px;
+					font-size: 20px;
+					text-align: center;
+					color: white;
+					background-color: #F43530;
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 5;
+				}
+			}
+
+			body {
+				background-color: #F8F8F8;
+				width: 100%;
+				height: auto;
+			}
+
+			.weui-tabbar {
+				position: fixed;
+				bottom: 0px;
+				z-index: 50;
+				background-color: #F2F2F2;
+			}
+
+			.weui-tabbar__label {
+				font-size: 16px;
+				color: gray;
+			}
+
+			.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+				color: #E3170D;
+			}
+
+			.coupon_action {
+				background-color: #FFFFFF;
+				margin-bottom: 15px;
+				border-top: 10px solid #FFFFFF;
+			}
+
+			.coupon_content {
+				border-radius: 20px;
+				border-bottom: 1px dashed #F43530;
+			}
+
+			.coupon_content img {
+				width: 90%;
+				height: 160px;
+				margin: 0 5%;
+				border-radius: 20px;
+			}
+
+			.coupon_content p {
+				margin-left: 10%;
+				color: #000000;
+				font-size: 18px;
+			}
+
+			.coupon_active {
+				width: 100%;
+				height: 32px;
+				background-color: #FFFFFF;
+			}
+
+			.coupon_active h4 {
+				color: darkgray;
+				margin-right: 5%;
+				float: right;
+			}
+		</style>
+
+
+
+	</head>
+
+	<body>
+		<div class="title"><strong>约惠</strong></div>
+
+		<div class="weui-tab">
+			<div class="weui-tab__panel">
+
+				<!--第一个优惠活动-->
+				<a href="coupon/coupon_type.html">
+					<div class="coupon_action" style="margin-top: 48px;">
+						<div class="coupon_content">
+							<img src="img/coupon_action/coupon_action1.jpg" />
+							<p>活动期限：&nbsp;&nbsp;2017.12.01-2017.12.30</p>
+						</div>
+
+						<div class="coupon_active">
+							<h4>立即参加>></h4>
+						</div>
+					</div>
+				</a>
+
+				<!--第二个优惠活动-->
+				<a href="coupon/coupon_type.html">
+					<div class="coupon_action">
+						<div class="coupon_content">
+							<img src="img/coupon_action/coupon_action2.jpg" />
+							<p>活动期限：&nbsp;&nbsp;2017.12.01-2017.12.30</p>
+						</div>
+
+						<div class="coupon_active">
+							<h4>立即参加>></h4>
+						</div>
+					</div>
+				</a>
+
+				<a href="coupon/coupon_type.html">
+					<div class="coupon_action">
+						<div class="coupon_content">
+							<img src="img/coupon_action/coupon_action3.jpg" />
+							<p>活动期限：&nbsp;&nbsp;2017.12.01-2017.12.30</p>
+						</div>
+
+						<div class="coupon_active">
+							<h4>立即参加>></h4>
+						</div>
+					</div>
+				</a>
+
+				<a href="coupon/coupon_type.html">
+					<div class="coupon_action">
+						<div class="coupon_content">
+							<img src="img/coupon_action/coupon_action4.jpg" />
+							<p>活动期限：&nbsp;&nbsp;2017.12.01-2017.12.30</p>
+						</div>
+
+						<div class="coupon_active">
+							<h4>立即参加>></h4>
+						</div>
+					</div>
+				</a>
+
+				<a href="coupon/coupon_type.html">
+					<div class="coupon_action">
+						<div class="coupon_content">
+							<img src="img/coupon_action/coupon_action5.jpg" />
+							<p>活动期限：&nbsp;&nbsp;2017.12.01-2017.12.30</p>
+						</div>
+
+						<div class="coupon_active">
+							<h4>立即参加>></h4>
+						</div>
+					</div>
+				</a>
+
+				<div style="margin-bottom: 30px;">
+					<a href="coupon/coupon_type.html" class="weui-btn weui-btn_mini weui-btn_primary" style="margin:0px 25%;font-size: 18px;border-bottom: 20px;width: 50%;background-color: #F43530;">更多优惠</a>
+				</div>
+
+
+
+			</div>
+			<div class="weui-tabbar">
+				<a href="main.html" class="weui-tabbar__item">
+					<span style="display: inline-block;position: relative;">
+						<img src="img/main_before.png" alt="" class="weui-tabbar__icon">
+					</span>
+					<p class="weui-tabbar__label">主页</p>
+				</a>
+				<a href="hair_style.html" class="weui-tabbar__item">
+					<img src="img/hairstyle_before.png" alt="" class="weui-tabbar__icon">
+					<p class="weui-tabbar__label">发型师</p>
+				</a>
+				<a href="coupon.html" class="weui-tabbar__item weui-bar__item_on">
+					<span style="display: inline-block;position: relative;">
+						<img src="img/coupon_after.png" alt="" class="weui-tabbar__icon">
+					</span>
+					<p class="weui-tabbar__label">约惠</p>
+				</a>
+				<a href="my_information.html" class="weui-tabbar__item">
+					<img src="img/myinformation_before.png" alt="" class="weui-tabbar__icon">
+					<p class="weui-tabbar__label">我的</p>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript" class="tabbar js_show">
+			$(function() {
+				$('.weui-tabbar__item').on('click', function() {
+					$(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+				});
+			});
+		</script>
+	</body>
+
+</html>
